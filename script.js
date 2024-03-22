@@ -15,20 +15,24 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         // Get amount paid
-        const amountPaid = document.getElementById('amountPaid').value;
+        const amountPaid = parseFloat(document.getElementById('amountPaid').value);
 
-        // Display selected payment category, options, and amount paid
-        displayPaymentDetails(paymentCategory, paymentOptions, amountPaid);
+        // Log the values
+        console.log("Payment Category:", paymentCategory);
+        console.log("Payment Options:", paymentOptions);
+        console.log("Amount Paid:", amountPaid);
+
+        // Store payment details in localStorage
+        storePaymentDetails(paymentCategory, paymentOptions, amountPaid);
     });
 
-    function displayPaymentDetails(category, options, amount) {
-        const paymentDetails = document.createElement('div');
-        paymentDetails.innerHTML = `
-            <h2>Payment Details</h2>
-            <p><strong>Category:</strong> ${category}</p>
-            <p><strong>Options:</strong> ${options.join(', ')}</p>
-            <p><strong>Amount Paid:</strong> ${amount}</p>
-        `;
-        document.body.appendChild(paymentDetails);
+    function storePaymentDetails(category, options, amount) {
+        const paymentDetails = {
+            category: category,
+            options: options,
+            amount: amount
+        };
+        localStorage.setItem('paymentDetails', JSON.stringify(paymentDetails));
+        console.log("Payment details stored:", paymentDetails);
     }
 });

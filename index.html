@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="your-script.js"></script>
+    <script src="script.js"></script>
+    <script src="compute_logic.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,9 +74,12 @@
                 <input type="checkbox" name="paymentOption" value="UPI"> UPI
             </label>
             <hr>
-            <input type="number" id="amountPaid" name="amountPaid" placeholder="Enter Amount Paid" required>
+            <input type="number" id="amountPaid" name="amountPaid" placeholder="Enter Amount spent" required>
             <input type="submit" value="Suggest Best Payment Option">
+            <div id="paymentResult"></div>
         </form>
     </div>
+    <div id="paymentResult"></div>
+
 </body>
 </html>
