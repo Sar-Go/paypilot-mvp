@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="your-script.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Category</title>
@@ -23,7 +25,11 @@
         h1, h2 {
             text-align: center;
         }
-        select, input[type="number"], input[type="submit"] {
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="number"], input[type="submit"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -46,12 +52,29 @@
     <div class="container">
         <h1>Select Payment Category</h1>
         <form id="paymentForm">
-            <select id="paymentCategory" name="paymentCategory">
-                <option value="e-commerce">E-commerce</option>
-                <option value="travel">Travel</option>
-            </select>
+            <label>
+                <input type="radio" name="paymentCategory" value="e-commerce" checked> E-commerce
+            </label>
+            <label>
+                <input type="radio" name="paymentCategory" value="travel"> Travel
+            </label>
+            <hr>
+            <strong><center> Supported Payment Options</center></strong>
+            <label>
+                <input type="checkbox" name="paymentOption" value="Debit Card"> Debit Card
+            </label>
+            <label>
+                <input type="checkbox" name="paymentOption" value="Millenia"> Millenia
+            </label>
+            <label>
+                <input type="checkbox" name="paymentOption" value="Privilege"> Privilege
+            </label>
+            <label>
+                <input type="checkbox" name="paymentOption" value="UPI"> UPI
+            </label>
+            <hr>
             <input type="number" id="amountPaid" name="amountPaid" placeholder="Enter Amount Paid" required>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Suggest Best Payment Option">
         </form>
     </div>
 </body>
